@@ -112,7 +112,7 @@ resource "aws_eip" "webserver-elip" {
 }
 
 # Print out public ip
-output name {
+output "Instance_public_ip" {
   value       = aws_eip.webserver-elip.public_ip
 }
 
