@@ -111,6 +111,11 @@ resource "aws_eip" "webserver-elip" {
   depends_on = [aws_internet_gateway.webserver-igw]
 }
 
+# Print out public ip
+output name {
+  value       = aws_eip.webserver-elip.public_ip
+}
+
 # Create instance
 resource "aws_instance" "webserver-instance" {
   ami           = "ami-052efd3df9dad4825"
